@@ -1,0 +1,21 @@
+<!Doctype HTML>
+<HTML>
+    <HEAD>
+
+    </HEAD>
+    <BODY>
+        <p>This is retrive Data of the user in the Page For crud operations.</p>
+        <h2>RETRIVE USERS</h2>
+        <hr>
+        <form action="{% url 'retrive' %}" method="post">
+            {% csrf_token %}
+            {% for i in user %}
+            Name : {{i.username}} <br>
+            Email : {{i.email}}<br>
+            <a href="{% url 'update' pk=i.pk %}"><input type="button" value="Update"></a>
+            <a href="{% url 'delete' pk=i.pk %}"><input type="button" value="delete"></a>
+            <hr><br><hr>
+            {% endfor %}
+        </form>
+    </BODY>
+</HTML>

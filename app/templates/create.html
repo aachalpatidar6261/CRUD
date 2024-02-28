@@ -1,0 +1,26 @@
+<!Doctype HTML>
+<HTML>
+    <HEAD>
+
+    </HEAD>
+    <BODY>
+        {% if msg %}
+        <span>{{msg}}<span/>
+        {% endif %}
+        <p>This is my Index Page For crud operations.</p>
+        <form action="{% url 'create' %}" method="post">
+            {% csrf_token %}
+            <label>username : </label>
+            <input type="text" name="username"> <br> <br>
+            <label>email : </label>
+            <input type="email" name="email"> <br> <br>
+            
+            <label>password : </label>
+            <input type="pass" name="password"> <br> <br>
+        
+            <input type="submit" value="CREATE">
+           
+
+        </form>
+    </BODY>
+</HTML>
